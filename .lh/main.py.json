@@ -1,0 +1,18 @@
+{
+    "sourceFile": "main.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1770447537967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1770447537967,
+            "name": "Commit-0",
+            "content": "from flask import Flask\r\nfrom flask_cors import CORS\r\n\r\napp = Flask(__name__)\r\n\r\nCORS(\r\n    app,\r\n    resources={r\"/*\": {\"origins\": \"*\"}},\r\n    supports_credentials=True\r\n)\r\n"
+        }
+    ]
+}

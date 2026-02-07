@@ -1,0 +1,18 @@
+{
+    "sourceFile": "requirements.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1770434376665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1770434376665,
+            "name": "Commit-0",
+            "content": "blinker==1.9.0\r\nclick==8.3.1\r\ncolorama==0.4.6\r\nFlask==3.1.2\r\nflask-cors==6.0.2\r\nflask-marshmallow==1.4.0\r\nFlask-SQLAlchemy==3.1.1\r\ngreenlet==3.3.1\r\nitsdangerous==2.2.0\r\nJinja2==3.1.6\r\nMarkupSafe==3.0.3\r\nmarshmallow==4.2.2\r\nmarshmallow-sqlalchemy==1.4.2\r\nSQLAlchemy==2.0.46\r\ntyping_extensions==4.15.0\r\nWerkzeug==3.1.5\r\ngunicorn"
+        }
+    ]
+}
