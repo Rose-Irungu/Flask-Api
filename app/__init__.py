@@ -12,7 +12,19 @@ def create_app():
 
     db.init_app(app)
     ma.init_app(app)
-    CORS(app, origins=["https://your-live-frontend.com", "http://localhost:5173"])
+
+    #  ALLOW LOCAL DEV 
+    CORS(
+        app,
+        origins=[
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            # add your live frontend here later if needed
+            # "https://your-frontend.onrender.com"
+        ],
+        supports_credentials=True
+    )
+
     from .routes import reservation_bp
     app.register_blueprint(reservation_bp)
 

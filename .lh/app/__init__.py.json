@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1770302926729,
@@ -28,6 +28,22 @@
                 {
                     "date": 1770451048815,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,34 +11,12 @@\n     app.config.from_object(\"config.Config\")\r\n \r\n     db.init_app(app)\r\n     ma.init_app(app)\r\n-    \r\n+    CORS(app, origins=[\"https://your-live-frontend.com\", \"http://localhost:5173\"])\r\n     from .routes import reservation_bp\r\n     app.register_blueprint(reservation_bp)\r\n \r\n     with app.app_context():\r\n         db.create_all()\r\n \r\n     return app\r\n-from flask import Flask\r\n-from flask_sqlalchemy import SQLAlchemy\r\n-from flask_marshmallow import Marshmallow\r\n-from flask_cors import CORS\r\n-\r\n-db = SQLAlchemy()\r\n-ma = Marshmallow()\r\n-\r\n-def create_app():\r\n-    app = Flask(__name__)\r\n-    app.config.from_object(\"config.Config\")\r\n-\r\n-    db.init_app(app)\r\n-    ma.init_app(app)\r\n-\r\n-    from .routes import reservation_bp\r\n-    app.register_blueprint(reservation_bp)\r\n-\r\n-    with app.app_context():\r\n-        db.create_all()\r\n-\r\n-    return app\r\n"
+                },
+                {
+                    "date": 1770451423737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     app.config.from_object(\"config.Config\")\r\n \r\n     db.init_app(app)\r\n     ma.init_app(app)\r\n-    CORS(app, origins=[\"https://your-live-frontend.com\", \"http://localhost:5173\"])\r\n+    CORS(app, origins=[\"\", \"http://localhost:5173\"])\r\n     from .routes import reservation_bp\r\n     app.register_blueprint(reservation_bp)\r\n \r\n     with app.app_context():\r\n"
+                },
+                {
+                    "date": 1770451835888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     app.config.from_object(\"config.Config\")\r\n \r\n     db.init_app(app)\r\n     ma.init_app(app)\r\n-    CORS(app, origins=[\"\", \"http://localhost:5173\"])\r\n+    CORS(app)\r\n     from .routes import reservation_bp\r\n     app.register_blueprint(reservation_bp)\r\n \r\n     with app.app_context():\r\n"
+                },
+                {
+                    "date": 1770451936344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,21 @@\n     app.config.from_object(\"config.Config\")\r\n \r\n     db.init_app(app)\r\n     ma.init_app(app)\r\n-    CORS(app)\r\n+\r\n+    # 👇 ALLOW LOCAL DEV + (optionally) LIVE FRONTEND\r\n+    CORS(\r\n+        app,\r\n+        origins=[\r\n+            \"http://localhost:5173\",\r\n+            \"http://127.0.0.1:5173\",\r\n+            # add your live frontend here later if needed\r\n+            # \"https://your-frontend.onrender.com\"\r\n+        ],\r\n+        supports_credentials=True\r\n+    )\r\n+\r\n     from .routes import reservation_bp\r\n     app.register_blueprint(reservation_bp)\r\n \r\n     with app.app_context():\r\n"
+                },
+                {
+                    "date": 1770451966091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \r\n     db.init_app(app)\r\n     ma.init_app(app)\r\n \r\n-    # 👇 ALLOW LOCAL DEV + (optionally) LIVE FRONTEND\r\n+    #  ALLOW LOCAL DEV + (optionally) LIVE FRONTEND\r\n     CORS(\r\n         app,\r\n         origins=[\r\n             \"http://localhost:5173\",\r\n"
                 }
             ],
             "date": 1770302926729,
